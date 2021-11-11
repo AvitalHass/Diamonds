@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th >Shape</th>
+            <th>Size</th>
+            <th>Color</th>
+            <th>Clarity</th>
+            <th>Price</th>
+            <th>List Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let di of service.diamondsList">
+            <td>{{di.shape}}</td>
+            <td>{{di.size}}</td>
+            <td>{{di.color}}</td>
+            <td>{{di.clarity}}</td>
+            <td>{{di.price}}</td>
+            <td>{{di.listPrice}}</td>
+        </tr>
+    </tbody>
+</table>

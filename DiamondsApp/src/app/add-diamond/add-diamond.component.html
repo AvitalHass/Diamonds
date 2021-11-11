@@ -1,0 +1,79 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <div class="container">
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label>Shape</label>
+                <select class="form-select form-select-lg" aria-label="Default select example" name="shape"
+                    #shape="ngModel" [(ngModel)]="service.diamond.shape" required 
+                    [class.invalid]="shape.invalid && shape.touched">
+                    <option value="Round">Round</option>
+                    <option value="Princess">Princess</option>
+                    <option value="Cushion">Cushion</option>
+                    <option value="Oval">Oval</option>
+                    <option value="Marquise">Marquise</option>
+                    <option value="Pear">Pear</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Asscher">Asscher</option>
+                    <option value="Emerald">Emerald</option>
+                    <option value="Heart">Heart</option>
+                    <option value="Trillion">Trillion</option>
+                    <option value="Triangle">Triangle</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label>Size</label>
+                <input class="form-control form-control-lg" type="number"  name="size" #size="ngModel"
+                    [(ngModel)]="service.diamond.size" maxlength="20" minlength="1" min="0.0000001" required
+                    [class.invalid]="size.invalid && size.touched ">
+                <small class="text-danger" *ngIf="size.invalid && size.touched">Please enter valid
+                    price</small>
+            </div>
+            <div class="form-group col-md-2">
+                <label>Color</label>
+                <input class="form-control form-control-lg" [pattern]="'[D-Z]'" name="color"
+                    #color="ngModel" [(ngModel)]="service.diamond.color" required
+                    [class.invalid]="color.invalid && color.touched">
+                <small class="text-danger" *ngIf="color.invalid && color.touched">Please enter a letter between D to Z
+                </small>
+            </div>
+            <div class="form-group col-md-2">
+                <label>Clarity</label>
+                <select class="form-select form-select-lg" aria-label="Default select example" name="clarity"
+                    #clarity="ngModel" [(ngModel)]="service.diamond.clarity" required
+                    [class.invalid]="clarity.invalid && clarity.touched" >
+                    <option value="IF">IF</option>
+                    <option value="FL">FL</option>
+                    <option value="VVS1">VVS1</option>
+                    <option value="VVS2">VVS2</option>
+                    <option value="VS1">VS1</option>
+                    <option value="VS2">VS2</option>
+                    <option value="SI1">SI1</option>
+                    <option value="SI2">SI2</option>
+                    <option value="I1">I1</option>
+                    <option value="I2">I2</option>
+                    <option value="I3">I3</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label>Price</label>
+                <input class="form-control form-control-lg" type="number" name="price"
+                    #price="ngModel" [(ngModel)]="service.diamond.price" required maxlength="20" minlength="1" min="1"
+                    [class.invalid]="price.invalid && price.touched">
+                <small class="text-danger" *ngIf="price.invalid && price.touched">Please enter valid price</small>
+            </div>
+            <div class="form-group col-md-2">
+                <label>List Price</label>
+                <input class="form-control form-control-lg" type="number" name="listPrice"
+                    #listPrice="ngModel" [(ngModel)]="service.diamond.listPrice" required maxlength="20" minlength="1"
+                    min="1" [class.invalid]="listPrice.invalid && listPrice.touched">
+                <small class="text-danger" *ngIf="listPrice.invalid && listPrice.touched">Please enter valid
+                    price</small>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <button class="btn btn-secondary btn-lg btn-block" type="submit"
+                [disabled]="form.invalid">SUBMIT</button>
+        </div>
+    </div>
+</form>
