@@ -49,7 +49,7 @@ export class DiamondsDataService {
     for (let index = 0; index < this.diamondsList.length; index++) {
       this.averagePrice = this.averagePrice.valueOf() + this.diamondsList[index].price.valueOf();
       let help=(this.diamondsList[index].listPrice.valueOf() - this.diamondsList[index].price.valueOf());
-      this.averageDiscount = this.averagePrice.valueOf() + help;
+      this.averageDiscount = this.averageDiscount.valueOf() + help;
     }
     this.numberOfDiamonds = this.diamondsList.length;
     this.averagePrice = this.averagePrice / this.numberOfDiamonds;
