@@ -23,7 +23,7 @@ export class DiamondsDataService {
       .then(
         res => {
           debugger;
-          this.diamondsList[this.diamondsList.length] = this.diamond;
+          this.diamondsList[this.diamondsList.length] = res as Diamond;
           this.diamond = new Diamond();
           this.calcStatistics();
         },
