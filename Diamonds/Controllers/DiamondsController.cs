@@ -21,9 +21,10 @@ namespace Diamonds.Controllers
         }
 
         [HttpPut]
-        public void addDiamond(Diamond d)
+         public Diamond addDiamond(Diamond d)
         {
             diamondList.addDiamond(d);
+            return d;
         }
     }
 }
